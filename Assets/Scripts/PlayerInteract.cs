@@ -20,7 +20,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if (collision.CompareTag("Object"))
         {
-            Debug.Log(collision.name);
             currentInterObj = collision.gameObject;
         }
     }
@@ -33,7 +32,6 @@ public class PlayerInteract : MonoBehaviour
             {
                 currentInterObj = null;
             }
-            Debug.Log(collision.name);
         }
     }
 }
