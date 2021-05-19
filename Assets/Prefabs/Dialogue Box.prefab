@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326, y: -309}
+  m_AnchoredPosition: {x: -10, y: -167.7}
   m_SizeDelta: {x: 1057.7323, y: 132.50452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6373957365190411819
@@ -170,13 +170,6 @@ MonoBehaviour:
   dBox: {fileID: 6373957365190411815}
   dText: {fileID: 6373957363721632650}
   dialogActive: 1
-  dialogLines: []
-  currentLine: 0
-  dH: {fileID: 0}
-  inputField: {fileID: 0}
-  theInputField: {fileID: 0}
-  username: 
-  nextScene: {fileID: 0}
 --- !u!1 &6373957365348024138
 GameObject:
   m_ObjectHideFlags: 0
