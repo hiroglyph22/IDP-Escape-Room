@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameDialogHolder : MonoBehaviour
 {
 
-    private GameDialogManager gDM;
+    public GameDialogManager gDM;
 
     public string[] dialogLines;
 
@@ -18,13 +18,16 @@ public class GameDialogHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            if (!gDM.dialogActive)
+        if (gDM.currentLine < dialogLines.Length)
+        { 
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                gDM.dialogLines = dialogLines;
-                gDM.currentLine = 0;
-                gDM.ShowDialogue();
+                if (!gDM.dialogActive)
+                {
+                    //gDM.currentLine = 0;
+                    gDM.ShowDialogue();
+                    Debug.Log(gDM.currentLine + " is current line");
+                }
             }
         }
     }
