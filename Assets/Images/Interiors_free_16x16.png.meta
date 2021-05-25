@@ -322,7 +322,7 @@ TextureImporter:
     second: Interiors_free_16x16_105
   - first:
       213: -2215157757953291904
-    second: Interiors_free_16x16_106
+    second: Table
   - first:
       213: -2071193804538623571
     second: Interiors_free_16x16_107
@@ -1102,7 +1102,7 @@ TextureImporter:
     second: Interiors_free_16x16_105
   - first:
       213: 8605148989131140104
-    second: Interiors_free_16x16_106
+    second: Table
   - first:
       213: 834211104055434002
     second: Interiors_free_16x16_107
@@ -1657,7 +1657,7 @@ TextureImporter:
     second: Interiors_free_16x16_289
   - first:
       213: -4599577171631244763
-    second: Interiors_free_16x16_290
+    second: Chair
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -3741,7 +3741,7 @@ TextureImporter:
       name: Interiors_free_16x16_95
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 869
         width: 144
         height: 27
@@ -3964,27 +3964,6 @@ TextureImporter:
       bones: []
       spriteID: a7e40334481b20140800000000000000
       internalID: 4684501744039775866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interiors_free_16x16_106
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 818
-        width: 24
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80c2970e961ab6770800000000000000
-      internalID: 8605148989131140104
       vertices: []
       indices: 
       edges: []
@@ -7833,15 +7812,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interiors_free_16x16_290
+      name: Chair
       rect:
         serializedVersion: 2
-        x: 112
-        y: 869
-        width: 16
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 119
+        y: 826
+        width: 9
+        height: 20
+      alignment: 9
+      pivot: {x: 0.59271157, y: 0.48609313}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7849,6 +7828,27 @@ TextureImporter:
       bones: []
       spriteID: 52a7ce79ee40b20c0800000000000000
       internalID: -4599577171631244763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 818
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0894ebb61cd2241e0800000000000000
+      internalID: -2215157757953291904
       vertices: []
       indices: 
       edges: []

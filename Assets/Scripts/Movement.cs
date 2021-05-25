@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
@@ -34,9 +33,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        if (EventSystem.current.currentSelectedGameObject == null)
-        {
-           rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-        }
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 }

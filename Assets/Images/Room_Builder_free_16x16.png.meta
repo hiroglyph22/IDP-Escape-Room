@@ -37,7 +37,7 @@ TextureImporter:
     second: Room_Builder_free_16x16_10
   - first:
       213: 979498558519568106
-    second: Wall
+    second: Room_Builder_free_16x16_11
   - first:
       213: -1164961358312880163
     second: Room_Builder_free_16x16_12
@@ -56,9 +56,6 @@ TextureImporter:
   - first:
       213: -4952000368605739890
     second: Room_Builder_free_16x16_17
-  - first:
-      213: 2842137408638892664
-    second: Room_Builder_free_16x16_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -375,7 +372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall
+      name: Room_Builder_free_16x16_11
       rect:
         serializedVersion: 2
         x: 113
@@ -446,7 +443,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +464,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,7 +485,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,7 +506,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -517,27 +514,6 @@ TextureImporter:
       bones: []
       spriteID: e84c6adc6e5f64bb0800000000000000
       internalID: -4952000368605739890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Room_Builder_free_16x16_18
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 154
-        width: 28
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87a35c43aec417720800000000000000
-      internalID: 2842137408638892664
       vertices: []
       indices: 
       edges: []
