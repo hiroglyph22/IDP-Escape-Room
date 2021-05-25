@@ -3,61 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 public class GameDialogManager : MonoBehaviour
 {
 
     public GameObject dBox;
     public Text dText;
-
     public bool dialogActive;
-
-    public string[] dialogLines;
-
     public int currentLine;
 
-    public DialogHolder dH;
+    private GameDialogHolder gDH;
 
     public GameObject nextScene;
+    public GameObject currentObject;
+
+    public InputField inputField;
+    public GameObject inputFieldGO;
 
 
     void Start()
     {
-        dH = FindObjectOfType<DialogHolder>();
+        gDH = FindObjectOfType<GameDialogHolder>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dialogActive && Input.GetKeyDown(KeyCode.Space))
+        if (dialogActive && Input.GetKeyDown(KeyCode.Space) && EventSystem.current.currentSelectedGameObject == null)
         {
-            //dBox.SetActive(false);
-            //dialogActive = false;
             currentLine++;
         }
 
-        if (currentLine >= dialogLines.Length)
+        if (currentLine == gDH.dialogLines.Length)
         {
             dBox.SetActive(false);
             dialogActive = false;
-            Debug.Log("hi");
-
+            inputFieldGO.SetActive(false);
+            //Debug.Log("Input Field is set active false");
+            //if (erasing)
+            //{
+            //    erasingObject.SetActive(false);
+            //}
+            if (currentObject != null)
+            {
+                currentObject.SendMessage("DoneWithDialogue");
+            }
             currentLine = 0;
         }
-
-        dText.text = dialogLines[currentLine];
+        else if (currentLine < gDH.dialogLines.Length)
+        {
+            dText.text = gDH.dialogLines[currentLine];
+        }
     }
 
-    public void ShowBox(string dialogue)
-    {
-        dialogActive = true;
-        dBox.SetActive(true);
-        dText.text = dialogue;
-    }
+    //public void ShowBox(string dialogue)
+    //{
+    //    dialogActive = true;
+    //    dBox.SetActive(true);
+    //    dText.text = dialogue;
+    //}
 
-    public void ShowDialogue()
+    public void ShowDialogue(GameObject theObject)
     {
+        //if (erase)
+        //{
+        //    erasing = true;
+        //    erasingobject = objecttoerase;
+        //}
+        currentObject = theObject; 
         dialogActive = true;
         dBox.SetActive(true);
+        //currentLine = 0;
     }
 }
