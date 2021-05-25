@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject whitePanel;
+    public GameObject nextSceneUI;
 
     // Start is called before the first frame update
     void Start()
     {
-        whitePanel.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -20,6 +20,4 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
-
 }
