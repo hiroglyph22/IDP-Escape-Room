@@ -6,10 +6,11 @@ public class PlayerInteract : MonoBehaviour
 {
 
     public GameObject currentInterObj = null;
+    public bool currentlyInteracting = false;
 
     private void Update()
     {
-        if (Input.GetButtonDown("interact") && currentInterObj != null)
+        if (Input.GetKeyDown(KeyCode.Space) && currentInterObj != null && currentlyInteracting == false)
         {
             //Do something with the object
             currentInterObj.SendMessage("DoInteraction");
