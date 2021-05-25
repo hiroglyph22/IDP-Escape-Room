@@ -19,6 +19,7 @@ public class GameDialogManager : MonoBehaviour
     public GameObject currentObject;
 
     public InputField inputField;
+    public GameObject inputFieldGO;
 
 
     void Start()
@@ -38,6 +39,8 @@ public class GameDialogManager : MonoBehaviour
         {
             dBox.SetActive(false);
             dialogActive = false;
+            inputFieldGO.SetActive(false);
+            //Debug.Log("Input Field is set active false");
             //if (erasing)
             //{
             //    erasingObject.SetActive(false);

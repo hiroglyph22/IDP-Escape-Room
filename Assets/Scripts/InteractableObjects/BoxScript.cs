@@ -7,6 +7,7 @@ public class BoxScript : MonoBehaviour
 {
     private GameDialogHolder gDH;
     private GameDialogManager gDM;
+    private GameManager gM;
     private PlayerInteract playerInteract;
     private ClockScript clockScript;
     public GameObject inputField;
@@ -20,6 +21,7 @@ public class BoxScript : MonoBehaviour
 
     private void Start()
     {
+        gM = FindObjectOfType<GameManager>();
         gDH = FindObjectOfType<GameDialogHolder>();
         gDM = FindObjectOfType<GameDialogManager>();
         clockScript = FindObjectOfType<ClockScript>();
@@ -72,6 +74,7 @@ public class BoxScript : MonoBehaviour
         {
             if (input.text.ToUpper() == "CLUE" && access)
             {
+                gM.hintNum = 1;
                 playerInteract.currentlyInteracting = true;
                 inputField.SetActive(false);
                 input.text = "";
@@ -90,12 +93,14 @@ public class BoxScript : MonoBehaviour
                 gDH.dialogLines = new string[] { "Lucas: I tried to open it but nothing happened." };
                 gDM.ShowDialogue(box);
                 access = false;
+                input.text = "";
             }
         }
         else if (timesInteracted == 3)
         {
             if (input.text.ToUpper() == "ONLY TIME WILL TELL" && access)
             {
+                gM.hintNum = 2;
                 inputField.SetActive(false);
                 input.text = "";
                 playerInteract.currentlyInteracting = true;
@@ -114,6 +119,7 @@ public class BoxScript : MonoBehaviour
                 gDH.dialogLines = new string[] { "Lucas: I'm not sure if this is the right answer." };
                 gDM.ShowDialogue(box);
                 access = false;
+                input.text = "";
             }
         }
     }

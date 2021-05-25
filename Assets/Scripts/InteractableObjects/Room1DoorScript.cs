@@ -17,7 +17,7 @@ public class Room1DoorScript : MonoBehaviour
     {
         if (doorActive)
         {
-
+            Debug.Log("Yay we are now in the second room");
         }
     }
 

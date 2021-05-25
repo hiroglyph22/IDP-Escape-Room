@@ -902,7 +902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dBox: {fileID: 4531355125503062396}
   dText: {fileID: 4531355123736464593}
-  dialogActive: 0
+  dialogActive: 1
   currentLine: 0
   dH: {fileID: 4531355125503062400}
   inputField: {fileID: 839594864}

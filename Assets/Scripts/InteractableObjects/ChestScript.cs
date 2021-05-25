@@ -29,7 +29,7 @@ public class ChestScript : MonoBehaviour
         if (timesInteracted == 1)
         {
             playerInteract.currentlyInteracting = true;
-            gDH.dialogLines = new string[] { "Lucas: I hear something rattling inside. It sounds like a key! " +
+            gDH.dialogLines = new string[] { "Lucas: I hear something rattling inside. It sounds like a key! ",
             "It seems that the chest has been closed off by a combination lock. " +
             "Continue to look around the room and gather clues to unlock this chest." };
             gDM.ShowDialogue(chest);
@@ -77,6 +77,7 @@ public class ChestScript : MonoBehaviour
                 gDH.dialogLines = new string[] { "Lucas: I tried but nothing happened. I don't think this is the right answer." };
                 gDM.ShowDialogue(chest);
                 access = false;
+                input.text = "";
             }
         }
     }

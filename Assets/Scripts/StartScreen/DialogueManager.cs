@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dBox;
     public Text dText;
 
-    public bool dialogActive;
+    public bool dialogActive = true;
     
     public int currentLine;
 
@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
                     print(username);
                 }
             }
-            if (currentLine == 10)
+            if (currentLine == dH.dialogueLines.Length)
             {
                 nextScene.SetActive(true);
             }
@@ -64,8 +64,11 @@ public class DialogueManager : MonoBehaviour
 
             currentLine = 0;
         }
-
-        dText.text = dH.dialogueLines[currentLine];
+        else if (currentLine < dH.dialogueLines.Length)
+        {
+            dText.text = dH.dialogueLines[currentLine];
+        }
+        
     }
 
     public void ShowBox(string dialogue)

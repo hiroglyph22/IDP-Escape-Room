@@ -10,6 +10,7 @@ public class ClockScript : MonoBehaviour
     private GameDialogHolder gDH;
     private GameDialogManager gDM;
     private PlayerInteract playerInteract;
+    private GameManager gM;
     public GameObject inputField;
     public InputField input;
     public int timesInteracted = 1;
@@ -23,6 +24,7 @@ public class ClockScript : MonoBehaviour
         gDH = FindObjectOfType<GameDialogHolder>();
         gDM = FindObjectOfType<GameDialogManager>();
         playerInteract = FindObjectOfType<PlayerInteract>();
+        gM = FindObjectOfType<GameManager>();
     }
 
     public void DoInteraction()
@@ -64,6 +66,7 @@ public class ClockScript : MonoBehaviour
         {
             if (input.text.ToUpper() == "ESCAPE" && access)
             {
+                gM.hintNum = 3;
                 playerInteract.currentlyInteracting = true;
                 inputField.SetActive(false);
                 input.text = "";
@@ -78,6 +81,7 @@ public class ClockScript : MonoBehaviour
                 gDH.dialogLines = new string[] { "Lucas: I'm not sure if this is the right answer." };
                 gDM.ShowDialogue(clock);
                 access = false;
+                input.text = "";
             }
         }
     }
