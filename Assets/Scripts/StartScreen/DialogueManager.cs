@@ -11,8 +11,6 @@ public class DialogueManager : MonoBehaviour
     public Text dText;
 
     public bool dialogActive;
-
-    public string[] dialogLines;
     
     public int currentLine;
 
@@ -40,12 +38,12 @@ public class DialogueManager : MonoBehaviour
                 //dBox.SetActive(false);
                 //dialogActive = false;
             currentLine++;
-            if (dH.dialogueLines[currentLine] == "What is your username?")
+            if (currentLine < dH.dialogueLines.Length)
             {
+                if (dH.dialogueLines[currentLine] == "What is your username?")
+                {
                 inputField.SetActive(true);
-            }
-            try
-            {
+                }
                 if (dH.dialogueLines[currentLine - 1] == "What is your username?")
                 {
                     username = theInputField.text;
@@ -53,17 +51,13 @@ public class DialogueManager : MonoBehaviour
                     print(username);
                 }
             }
-            catch (Exception e)
-            {
-
-            }
-            if (currentLine == 9)
+            if (currentLine == 10)
             {
                 nextScene.SetActive(true);
             }
         }
 
-        if (currentLine >= dialogLines.Length)
+        if (currentLine >= dH.dialogueLines.Length)
         {
             dBox.SetActive(false);
             dialogActive = false;
@@ -71,7 +65,7 @@ public class DialogueManager : MonoBehaviour
             currentLine = 0;
         }
 
-        dText.text = dialogLines[currentLine];
+        dText.text = dH.dialogueLines[currentLine];
     }
 
     public void ShowBox(string dialogue)

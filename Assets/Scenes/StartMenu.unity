@@ -179,10 +179,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -404,8 +404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -431.66, y: -151.3}
-  m_SizeDelta: {x: 159.1272, y: 30}
+  m_AnchoredPosition: {x: -249.9, y: -5}
+  m_SizeDelta: {x: 519.16705, y: 39.86409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839594866
 MonoBehaviour:
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 50
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -541,8 +541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -0.5}
-  m_SizeDelta: {x: -10, y: -13}
+  m_AnchoredPosition: {x: 4.2, y: -0.5}
+  m_SizeDelta: {x: 8.495209, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997428046
 MonoBehaviour:
@@ -565,10 +565,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 2
+    m_FontSize: 20
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -903,8 +903,6 @@ MonoBehaviour:
   dBox: {fileID: 4531355125503062396}
   dText: {fileID: 4531355123736464593}
   dialogActive: 0
-  dialogLines:
-  - Press Space to Start
   currentLine: 0
   dH: {fileID: 4531355125503062400}
   inputField: {fileID: 839594864}
@@ -927,8 +925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: 11.2}
-  m_SizeDelta: {x: 1017.4253, y: 66.20886}
+  m_AnchoredPosition: {x: -2.9, y: -1.2}
+  m_SizeDelta: {x: 1017.4253, y: 95.80118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4531355123736464593
 MonoBehaviour:
@@ -1166,20 +1164,16 @@ MonoBehaviour:
   - You are an investigator on the search for the infamous Dr. Nefarious; a psychopathic
     scientist who has a gruesome liking towards human behavior experiments through
     torture.
-  - "Player: I\u2019ve been looking for Dr. Nefarious for some time now\u2026 I've
+  - "Lucas: I\u2019ve been looking for Dr. Nefarious for some time now\u2026 I've
     finally found his laboratory and I need to catch him quickly."
   - You arrive and step in front of the door, something knocks you out and you lose
     consciousness. You wake up in a small room.
-  - "Player: I\u2019m dizzy and my mind is all over the place. The last thing I remember
+  - "Lucas: I\u2019m dizzy and my mind is all over the place. The last thing I remember
     is walking into the front of Dr. Nefarious\u2019 laboratory. "
   - "You look around and notice a door. You drag yourself to the door, and as you
     try to open it, you find out it\u2019s locked. A loud voice booms from outside
     the door."
-  - "Dr. Nefarious: Welcome detective! It appears that you've found me. What you
-    may have already noticed is that the door in this room is locked. I\u2019ve decided
-    to allow myself to indulge in this little treat. What I\u2019ve set up is an
-    escape room! You have 30 minutes to solve the puzzles and escape this laboratory,
-    unless you want to experience a long and torturous death. Your first adventure
-    starts in this room out of the three rooms I have prepared for you. I\u2019ve
-    left you with some clues to help you get out of this room, but the rest is up
-    to you. 30 minutes on the clock. Your time starts now!"
+  - "Dr. Nefarious: Welcome detective! What I\u2019ve set up is an escape room! You
+    have 30 minutes to solve the puzzles and escape this laboratory. I\u2019ve left
+    you with some clues to help you get out of this room, but the rest is up to you.
+    Your time starts now!"

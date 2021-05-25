@@ -24,7 +24,6 @@ public class DialogHolder : MonoBehaviour
         {
             if (!dM.dialogActive)
             {
-                dM.dialogLines = dialogueLines;
                 dM.currentLine = 0;
                 dM.ShowDialogue();
             }

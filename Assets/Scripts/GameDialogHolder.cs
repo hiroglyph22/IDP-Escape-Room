@@ -18,17 +18,17 @@ public class GameDialogHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gDM.currentLine < dialogLines.Length)
-        { 
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                if (!gDM.dialogActive)
-                {
-                    //gDM.currentLine = 0;
-                    gDM.ShowDialogue();
-                    Debug.Log(gDM.currentLine + " is current line");
-                }
-            }
-        }
+        //if (gDM.currentLine < dialogLines.Length)
+        //{ 
+        //    if (Input.GetKeyUp(KeyCode.Space))
+        //    {
+        //        if (!gDM.dialogActive)
+        //        {
+        //            //gDM.currentLine = 0;
+        //            Debug.Log("Going thro gamedialogholder");
+        //            gDM.ShowDialogue(null);
+        //        }
+        //    }
+        //}
     }
 }
