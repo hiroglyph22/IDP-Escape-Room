@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Welcome to [ENTER GAME NAME]
+  - Welcome to 'The Mystery of the Mad Scientist'
   - What is your username?
   - Here we go!
   - ... ... ...
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   - You arrive and step in front of the door, something knocks you out and you lose
     consciousness. You wake up in a small room.
   - "Lucas: I\u2019m dizzy and my mind is all over the place. The last thing I remember
-    is walking into the front of Dr. Nefarious\u2019 laboratory. "
+    is walking into the front of Dr. Nefarious\u2019 laboratory."
   - "You look around and notice a door. You drag yourself to the door, and as you
     try to open it, you find out it\u2019s locked. A loud voice booms from outside
     the door."

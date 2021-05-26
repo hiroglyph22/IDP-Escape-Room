@@ -39,4 +39,14 @@ public class Movement : MonoBehaviour
            rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
         }
     }
+
+    public void PlayerTransitionRoom2()
+    {
+        transform.position = new Vector3(25.41f, -1.95f, 0);
+    }
+
+    public void PlayerTransitionRoom3()
+    {
+        transform.position = new Vector3(3.82f, -13.82f, 0);
+    }
 }

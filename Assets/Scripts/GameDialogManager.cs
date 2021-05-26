@@ -14,6 +14,7 @@ public class GameDialogManager : MonoBehaviour
     public int currentLine;
 
     private GameDialogHolder gDH;
+    private PlayerInteract playerInteract;
 
     public GameObject nextScene;
     public GameObject currentObject;
@@ -25,6 +26,7 @@ public class GameDialogManager : MonoBehaviour
     void Start()
     {
         gDH = FindObjectOfType<GameDialogHolder>();
+        playerInteract = FindObjectOfType<PlayerInteract>();
     }
 
     // Update is called once per frame
@@ -75,5 +77,14 @@ public class GameDialogManager : MonoBehaviour
         dialogActive = true;
         dBox.SetActive(true);
         //currentLine = 0;
+    }
+
+    public void InteractionAfterInput(string[] dialogue, GameObject theObject)
+    {
+        playerInteract.currentlyInteracting = true;
+        inputFieldGO.SetActive(false);
+        inputField.text = "";
+        gDH.dialogLines = dialogue;
+        ShowDialogue(theObject);
     }
 }

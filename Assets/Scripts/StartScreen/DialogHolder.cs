@@ -8,7 +8,7 @@ public class DialogHolder : MonoBehaviour
 
     private DialogueManager dM;
 
-    public string[] dialogueLines = { "Welcome to [ENTER GAME NAME]", "What is your username?", "Here we go!", "... ... ...",
+    public string[] dialogueLines = { "Welcome to 'The Mystery of the Mad Scientist'", "What is your username?", "Here we go!", "... ... ...",
         "You are an investigator on the search for the infamous Dr. Nefarious; a psychopathic scientist who has a gruesome " +
             "liking towards human behavior experiments through torture.", "Lucas: I’ve been looking for Dr. Nefarious for some " +
             "time now… I've finally found his laboratory and I need to catch him quickly.", "You arrive and step in front of the " +
