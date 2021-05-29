@@ -19,15 +19,12 @@ public static class DataDump
     private static GoogleCredential credential;
 
     public static void Initialize() {
-        if (!initialized) {
-            string credentialString = Resources.Load("idp-9th-grade-2021-group-5-006d09808b61", typeof(TextAsset)).ToString();
-            credential = GoogleCredential.FromJson(credentialString).CreateScoped(Scopes);
-            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer() {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicationName
-            });
-            initialized = true;
-        }
+        string credentialString = Resources.Load("idp-9th-grade-2021-group-5-006d09808b61", typeof(TextAsset)).ToString();
+        credential = GoogleCredential.FromJson(credentialString).CreateScoped(Scopes);
+        service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer() {
+            HttpClientInitializer = credential,
+            ApplicationName = ApplicationName
+        });
     }
 
     public static IList<IList<object>> ReadEntries(string rangeLow, string rangeHigh, int index){
@@ -48,22 +45,4 @@ public static class DataDump
         var appendResponse = appendRequest.Execute();
     }
 
-    public static void UpdateEntry(string cell, List<object> inputs, int index) {
-        var range = $"{sheets[index]}!{cell}";
-        var valueRange = new Google.Apis.Sheets.v4.Data.ValueRange();
-        valueRange.Values = new List<IList<object>> {inputs};
-        var updateRequest = service.Spreadsheets.Values.Update(valueRange, SpreadsheetID, range);
-        updateRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
-        var updateResponse = updateRequest.Execute();
-
-    }
-    /// <summary>
-    /// This method deletes entries from the spreadsheet. (untested)
-    /// </summary>
-    public static void DeleteEntry(string leftBound, string rightBound, int index) {
-        var range = $"{sheets[index]}!{leftBound}:{rightBound}";
-        var requestBody = new ClearValuesRequest();
-        var deleteRequest = service.Spreadsheets.Values.Clear(requestBody, SpreadsheetID, range);
-        var deleteResponse = deleteRequest.Execute();
-    }
 }
