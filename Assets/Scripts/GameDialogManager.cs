@@ -10,11 +10,11 @@ public class GameDialogManager : MonoBehaviour
 
     public GameObject dBox;
     public Text dText;
-    public bool dialogActive;
-    public int currentLine;
+    public bool dialogActive = true;
+    public int currentLine = 0;
 
-    private GameDialogHolder gDH;
-    private PlayerInteract playerInteract;
+    public GameDialogHolder gDH;
+    public PlayerInteract playerInteract;
 
     public GameObject nextScene;
     public GameObject currentObject;
@@ -29,7 +29,6 @@ public class GameDialogManager : MonoBehaviour
         playerInteract = FindObjectOfType<PlayerInteract>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space) && EventSystem.current.currentSelectedGameObject == null)
@@ -42,11 +41,6 @@ public class GameDialogManager : MonoBehaviour
             dBox.SetActive(false);
             dialogActive = false;
             inputFieldGO.SetActive(false);
-            //Debug.Log("Input Field is set active false");
-            //if (erasing)
-            //{
-            //    erasingObject.SetActive(false);
-            //}
             if (currentObject != null)
             {
                 currentObject.SendMessage("DoneWithDialogue");
@@ -59,32 +53,19 @@ public class GameDialogManager : MonoBehaviour
         }
     }
 
-    //public void ShowBox(string dialogue)
-    //{
-    //    dialogActive = true;
-    //    dBox.SetActive(true);
-    //    dText.text = dialogue;
-    //}
-
-    public void ShowDialogue(GameObject theObject)
+    public void ShowDialogue(string[] dialog, GameObject theObject)
     {
-        //if (erase)
-        //{
-        //    erasing = true;
-        //    erasingobject = objecttoerase;
-        //}
+        gDH.dialogLines = dialog;
         currentObject = theObject; 
         dialogActive = true;
         dBox.SetActive(true);
-        //currentLine = 0;
+        playerInteract.currentlyInteracting = true;
     }
 
     public void InteractionAfterInput(string[] dialogue, GameObject theObject)
     {
-        playerInteract.currentlyInteracting = true;
         inputFieldGO.SetActive(false);
         inputField.text = "";
-        gDH.dialogLines = dialogue;
-        ShowDialogue(theObject);
+        ShowDialogue(dialogue, theObject);
     }
 }

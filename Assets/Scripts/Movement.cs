@@ -11,10 +11,12 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     private float movementx;
+    private PlayerInteract playerInteract;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInteract = FindObjectOfType<PlayerInteract>();
     }
 
     void Update()
@@ -34,7 +36,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        if (EventSystem.current.currentSelectedGameObject == null)
+        if (EventSystem.current.currentSelectedGameObject == null && playerInteract.currentlyInteracting == false)
         {
            rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
         }

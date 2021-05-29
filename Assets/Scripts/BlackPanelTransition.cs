@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlackPanelTransition : MonoBehaviour
 {
@@ -26,11 +27,21 @@ public class BlackPanelTransition : MonoBehaviour
             dialogueManager.SendMessage("UpdateDialogueForRoom2");
             transitionCount++;
         }
-        else
+        else if (transitionCount == 2)
         {
             cam.SendMessage("CameraTransitionRoom3");
             player.SendMessage("PlayerTransitionRoom3");
             dialogueManager.SendMessage("UpdateDialogueForRoom3");
+            transitionCount++;
+        }
+        else if (transitionCount == 3)
+        {
+            SceneManager.LoadScene("FinalScene");
+            transitionCount++;
+        }
+        else if (transitionCount == 4)
+        {
+            SceneManager.LoadScene("EndScene");
         }
         
     }

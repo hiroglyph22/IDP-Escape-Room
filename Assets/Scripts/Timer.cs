@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class Timer : DefaultInteractableScript
 {
 
-    public float time = 1800f;
+    public static float time = 1800f;
     public Text text;
+    static public bool lose = false;
+    public GameObject timer;
+    public GameObject blackPanel;
 
     // Update is called once per frame
     void Update()
@@ -18,11 +22,19 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            lose = true;
             //Show lose screen
+            gDM.ShowDialogue(new string[] {"BEEEEP. BEEEP. BEEEEP."}, timer);
+            
         }
 
         DisplayTime(time);
 
+    }
+
+    public void DoneWithDialogue()
+    {
+        blackPanel.SetActive(true);
     }
 
     void DisplayTime(float displayingTime)

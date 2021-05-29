@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "idp-9th-grade-2021-group-5",
+  "private_key_id": "006d09808b61ec33e2666ed41eb9cbbba88b790b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7iTnJbB5d8X4x\n6LbqN9gmXaMPqTFXNIcs1fyfP6pH18SDU3HiTMXhYSqx1Hs2PouC3OzBoG2kuoob\nc7CMXfg9vWItwFNtFdUuazKGtrp6Qcsrk7RnPT40YX+mB3gVSRN2XejQ3iItjbqm\nHX99wyNHgvA9TkQyYai19Bp45+YmRk5/QdBD1O0YgKWW54Fb9vyTPjb48uL57nOB\nNs1BEg0e1PDfBUBmsmdObqZsI0pnfdpEUU3vY/V98H1tDZQlaApDsc5bfPx8ziBm\nr+at8EuhxAf6HBzWgYzIb4Qhs0q/LT+/S9qds5por5jNUOVrxGfjjacc4Fn7BRga\nIZKpGdxHAgMBAAECggEACHWOKqbdrOPe3HemRx8aeRZgjpXs0XoCXjW96W7YHAgM\nG+407cmPqgZhShg3u6xLTC19hBw4/p85Rtqit+OjDVATPuy1ENg9/3zA7csNu8Q4\nt+dmRi+1ND3ZodGanOJ0mng/aXyBb/w7vAUKbecYA2Noc95jvMFR4T7hYKD5m8li\neJem8c/bGrYCUWucmDAiC38Z2EV+AIHeSIQtM9+HCoEgH5O5S8PkKNLuslp8nLg2\nAhg99c3NsC5/08Nof2JuPEFp6gYYByGPFBlKLgPKnYsD89CI6pndyfUdZpRTrc7M\nzMMSx4lq91owcrO7wYUTWPEufI6Sx47NVCXvwlR0UQKBgQDnQMsrrR4P6QmPTy+c\n+NC19eN1KEvfuKvJFmgntD0CIcJlpxhkDFhPXWlmDs7MavrBloa8W8urHteaIkZC\nnWE5pg/WqRv00GqjcAXpA3XFVx8c8oLIhJhx9d+qei32RAPCaM2HmYNm9w9DeqSK\nPciHGJ2c1nTwNeF87KTD6FnvxQKBgQDPmsxGBc46qZESZK4AvvGOhfPXTGtUrEqQ\nc6HEE1u57g2LpU3aliTBbE4FCSoR4tbYPTUslVTh41sUYN9KnROBxImsg+oaQbxF\nwl/CjlQth+y6YlPQd2UYabs4e3VDat8ivzGbQ+BAOaWT9WYwDi96fr+YOWqy+TqM\ne+IWmznwmwKBgQDcizi4kMPI3LDXUefQxqMVxkmFJEcoOBDtGEeBBi3g6J1jIPbs\nA7H9DtNEF/81iRlYotwgq1MUAbgRMXrccQeWWT9ls6YL1vC8qkuYrEoXSD1N+CKu\nZXaVyK3lAdzvrnH/aMALAGcHPbv62O4vQTkLTniSaRzhMiG4aF/CzsdnGQKBgQCn\nMZfJ3OsVu3ImSgcIer63dZHHlrfp3Ue/xiBFdQGuX9Vw3ZQxsjGvxLWgwJytAu7b\n/49PdISD10KGyu2Jfa80F0B5O1PSCZbC56OPYGjSsmEoSgAOJ9m3K4+oEWWDAhLq\nPOiKjsOPdd2vpzbBBOufz2wmADe6I5XPhgWzBxhGeQKBgDhkY/aawkKBfrAaaZpa\n3k+p0HbzePnz7W+1jxSwmPBLbTIcegD17FZweknP8hP15pRtIYnzym6ir/2+DoMc\nJC1jRRncgRNh+xGk8RT7deDXJ/NxtJMjLS7DEj7XuKfdEx6MunPU0G4LwoE4C5Bz\nlVuIenwAvn2O8ci6CoxiMiiS\n-----END PRIVATE KEY-----\n",
+  "client_email": "sheets@idp-9th-grade-2021-group-5.iam.gserviceaccount.com",
+  "client_id": "117043162298990520968",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sheets%40idp-9th-grade-2021-group-5.iam.gserviceaccount.com"
+}

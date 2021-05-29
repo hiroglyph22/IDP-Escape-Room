@@ -2,29 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaperScript : MonoBehaviour
+public class PaperScript : DefaultInteractableScript
 {
-    public GameDialogHolder gDH;
-    public GameDialogManager gDM;
 
+    public GameObject atbashPanel;
     public GameObject paper;
-
-    private void Start()
-    {
-        gDH = FindObjectOfType<GameDialogHolder>();
-        gDM = FindObjectOfType<GameDialogManager>();
-    }
+    public GameObject desk;
 
     public void DoInteraction()
     {
-        gDH.dialogLines = new string[] { "Lucas: A paper? ", "On this piece of paper is a table with the letters " +
+        atbashPanel.SetActive(true);
+        gDM.ShowDialogue(new string[] { "Lucas: A paper? ", "On this piece of paper is a table with the letters " +
             "of the alphabet written from A to Z across the top and reversed along the bottom. This is called the " +
-            "Atbash Table.", "Lucas: Atbash Table? Ok then. (Added Atbash Table to inventory)" };
-        gDM.ShowDialogue(paper);
+            "Atbash Table.", "Lucas: Atbash Table? Ok then. (Added Atbash Table to inventory)" }, paper);
+        gM.currrentTablePanel = atbashPanel;
     }
 
     public void DoneWithDialogue()
     {
+        desk.GetComponent<BoxCollider2D>().enabled = true;
+        playerInteract.currentlyInteracting = false;
+        atbashPanel.SetActive(false);
         paper.SetActive(false);
     }
 }

@@ -3,29 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClockScript : MonoBehaviour
+public class ClockScript : InputInteractableScript
 {
 
     public bool clockActive = false;
-    private GameDialogHolder gDH;
-    private GameDialogManager gDM;
-    private PlayerInteract playerInteract;
-    private GameManager gM;
-    public GameObject inputField;
-    public InputField input;
-    public int timesInteracted = 1;
-    public bool access;
     public GameObject clock;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        gDH = FindObjectOfType<GameDialogHolder>();
-        gDM = FindObjectOfType<GameDialogManager>();
-        playerInteract = FindObjectOfType<PlayerInteract>();
-        gM = FindObjectOfType<GameManager>();
-    }
+    public GameObject morseCodePanel;
 
     public void DoInteraction()
     {
@@ -33,27 +16,31 @@ public class ClockScript : MonoBehaviour
         {
             if (timesInteracted == 1)
             {
-                playerInteract.currentlyInteracting = true;
-                gDH.dialogLines = new string[] {"Lucas: Huh. Interesting.", "Lucas finds a paper behind the clock", 
-                    "Lucas: A code?", "You have stumbled upon a piece of paper behind the clock. On the paper, the code reads out:" +
-                    " *   ***   -*-*   *-   *--*   *", "Lucas: Well then. Let’s give this a try." };
+                morseCodePanel.SetActive(true);
                 access = true;
-                gDM.ShowDialogue(clock);
+                gDM.ShowDialogue(new string[] {"Lucas: Huh. Interesting.", "Lucas finds a paper behind the clock",
+                    "Lucas: A code?", "You have stumbled upon a piece of paper behind the clock. On the paper, the code reads out:" +
+                    " *   ***   -*-*   *-   *--*   *", "Lucas: Well then. Let’s give this a try." }, clock);
             }
             else if (timesInteracted == 2)
             {
-                playerInteract.currentlyInteracting = true;
-                gDH.dialogLines = new string[] {"Lucas: Lets see if I can decode this." };
+                morseCodePanel.SetActive(true);
                 inputField.SetActive(true);
                 access = true;
-                gDM.ShowDialogue(clock);
+                gDM.ShowDialogue(new string[] { "Lucas: Lets see if I can decode this." }, clock);
             }
+        }
+        else
+        {
+            gDM.ShowDialogue(new string[] {"Lucas: Lets see if there's anything suspicious here.", "Lucas: No from what I can see it's" +
+                " just a normal clock." }, clock);
         }
     }
 
     public void DoneWithDialogue()
     {
         playerInteract.currentlyInteracting = false;
+        morseCodePanel.SetActive(false);
         if (inputField.activeSelf)
         {
             inputField.SetActive(false);
@@ -67,21 +54,14 @@ public class ClockScript : MonoBehaviour
             if (input.text.ToUpper() == "ESCAPE" && access)
             {
                 gM.hintNum = 3;
-                playerInteract.currentlyInteracting = true;
-                inputField.SetActive(false);
-                input.text = "";
-                gDH.dialogLines = new string[] { "Lucas: I got ESCAPE.", "Lucas: I guess I need to use this word as a clue."};
-                gDM.ShowDialogue(clock);
+                gDM.InteractionAfterInput(new string[] { "Lucas: I got ESCAPE.", "Lucas: I guess I need to use this word as a clue." }, clock);
                 access = false;
                 timesInteracted = 3;
             }
             else if (input.text.ToUpper() != "ESCAPE" && access)
             {
-                playerInteract.currentlyInteracting = true;
-                gDH.dialogLines = new string[] { "Lucas: I'm not sure if this is the right answer." };
-                gDM.ShowDialogue(clock);
+                gDM.ShowDialogue(new string[] { "Lucas: I'm not sure if this is the right answer." }, clock);
                 access = false;
-                input.text = "";
             }
         }
     }

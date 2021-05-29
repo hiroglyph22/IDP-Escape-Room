@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     public InputField theInputField;
 
-    public string username;
+    public static string username;
 
     public GameObject nextScene;
 
@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (dH.dialogueLines[currentLine] == "What is your username?")
                 {
-                inputField.SetActive(true);
+                    inputField.SetActive(true);
                 }
                 if (dH.dialogueLines[currentLine - 1] == "What is your username?")
                 {
