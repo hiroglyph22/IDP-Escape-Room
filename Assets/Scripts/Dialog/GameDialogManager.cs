@@ -13,7 +13,7 @@ public class GameDialogManager : MonoBehaviour
     public bool dialogActive = true;
     public int currentLine = 0;
 
-    public GameDialogHolder gDH;
+    public GameStartDialog gSD;
     public PlayerInteract playerInteract;
 
     public GameObject nextScene;
@@ -25,7 +25,7 @@ public class GameDialogManager : MonoBehaviour
 
     void Start()
     {
-        gDH = FindObjectOfType<GameDialogHolder>();
+        gSD = FindObjectOfType<GameStartDialog>();
         playerInteract = FindObjectOfType<PlayerInteract>();
     }
 
@@ -36,7 +36,7 @@ public class GameDialogManager : MonoBehaviour
             currentLine++;
         }
 
-        if (currentLine == gDH.dialogLines.Length)
+        if (currentLine == gSD.dialogLines.Length)
         {
             dBox.SetActive(false);
             dialogActive = false;
@@ -47,15 +47,15 @@ public class GameDialogManager : MonoBehaviour
             }
             currentLine = 0;
         }
-        else if (currentLine < gDH.dialogLines.Length)
+        else if (currentLine < gSD.dialogLines.Length)
         {
-            dText.text = gDH.dialogLines[currentLine];
+            dText.text = gSD.dialogLines[currentLine];
         }
     }
 
     public void ShowDialogue(string[] dialog, GameObject theObject)
     {
-        gDH.dialogLines = dialog;
+        gSD.dialogLines = dialog;
         currentObject = theObject; 
         dialogActive = true;
         dBox.SetActive(true);

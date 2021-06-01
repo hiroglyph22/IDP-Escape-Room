@@ -16,6 +16,6 @@ public class CameraTransition : MonoBehaviour
     public void CameraTransitionRoom3()
     {
         transform.position = new Vector3(0.39f, -10.6f, 0);
-        cam.orthographicSize = 4.3f;
+        cam.orthographicSize = 5f;
     }
 }

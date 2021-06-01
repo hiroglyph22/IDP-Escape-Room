@@ -4,71 +4,66 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class DialogueManager : MonoBehaviour
+public class StartScreenDialogueManager : MonoBehaviour
 {
 
     public GameObject dBox;
     public Text dText;
-
-    public bool dialogActive = true;
-    
+    public bool dialogActive = true; 
     public int currentLine;
-
-    public DialogHolder dH;
-
-    public GameObject inputField;
-
+    private StartScreenDialog sSD;
     public InputField theInputField;
-
     public static string username;
-
     public GameObject nextScene;
-
+    public GameObject inputField;
 
     void Start()
     {
-        dH = FindObjectOfType<DialogHolder>();
+        sSD = FindObjectOfType<StartScreenDialog>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
-                //dBox.SetActive(false);
-                //dialogActive = false;
-            currentLine++;
-            if (currentLine < dH.dialogueLines.Length)
+            if (inputField.activeSelf == false)
             {
-                if (dH.dialogueLines[currentLine] == "What is your username?")
+                currentLine++;
+            }
+            else if (theInputField.text != "")
+            {
+                currentLine++;
+            }
+            if (currentLine < sSD.dialogueLines.Length)
+            {
+                if (sSD.dialogueLines[currentLine] == "What is your username? (No spaces)")
                 {
                     inputField.SetActive(true);
                 }
-                if (dH.dialogueLines[currentLine - 1] == "What is your username?")
+                if (sSD.dialogueLines[currentLine - 1] == "What is your username? (No spaces)")
                 {
                     username = theInputField.text;
                     inputField.SetActive(false);
                     print(username);
                 }
             }
-            if (currentLine == dH.dialogueLines.Length)
+            if (currentLine == sSD.dialogueLines.Length)
             {
                 nextScene.SetActive(true);
             }
         }
 
-        if (currentLine >= dH.dialogueLines.Length)
+        if (currentLine >= sSD.dialogueLines.Length)
         {
             dBox.SetActive(false);
             dialogActive = false;
 
             currentLine = 0;
         }
-        else if (currentLine < dH.dialogueLines.Length)
+        else if (currentLine < sSD.dialogueLines.Length)
         {
-            dText.text = dH.dialogueLines[currentLine];
+            dText.text = sSD.dialogueLines[currentLine];
         }
-        
     }
 
     public void ShowBox(string dialogue)

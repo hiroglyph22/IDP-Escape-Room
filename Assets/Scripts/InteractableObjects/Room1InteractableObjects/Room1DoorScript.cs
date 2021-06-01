@@ -15,9 +15,9 @@ public class Room1DoorScript : DefaultInteractableScript
     {
         if (doorActive)
         {
-            //blackPanel.SendMessage("BlackPanelTransitionRoom2");
             Room1RawTime = 1800 - Mathf.RoundToInt(Timer.time);
             gM.roomNum = 2;
+            gM.hintNum = 3;
             blackPanel.SetActive(true);
         }
         else

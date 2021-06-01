@@ -15,7 +15,8 @@ public class PaperScript : DefaultInteractableScript
         gDM.ShowDialogue(new string[] { "Lucas: A paper? ", "On this piece of paper is a table with the letters " +
             "of the alphabet written from A to Z across the top and reversed along the bottom. This is called the " +
             "Atbash Table.", "Lucas: Atbash Table? Ok then. (Added Atbash Table to inventory)" }, paper);
-        gM.currrentTablePanel = atbashPanel;
+        gM.currentTablePanel = atbashPanel;
+        gM.panelY = -114;
     }
 
     public void DoneWithDialogue()

@@ -10,10 +10,14 @@ public class Timer : DefaultInteractableScript
     public static float time = 1800f;
     public Text text;
     static public bool lose = false;
-    public GameObject timer;
+    static public GameObject timer;
     public GameObject blackPanel;
 
-    // Update is called once per frame
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     void Update()
     {
         if (time > 0)

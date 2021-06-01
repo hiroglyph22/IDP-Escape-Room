@@ -11,7 +11,8 @@ public class BraillePaper : DefaultInteractableScript
     public void DoInteraction()
     {
         brailleChartPanel.SetActive(true);
-        gM.currrentTablePanel = brailleChartPanel;
+        gM.currentTablePanel = brailleChartPanel;
+        gM.panelY = -12f;
         gDM.ShowDialogue(new string[] { "Lucas: A paper just like last time?", "You have stumbled upon a piece of paper. " +
             "On this piece of paper is a chart of the braille alphabet and it’s translations.", "Lucas: Braille? That’s pretty " +
             "interesting. There seems to be no code on it, so I should save it for later.", "Lucas puts it in his inventory" },paper);

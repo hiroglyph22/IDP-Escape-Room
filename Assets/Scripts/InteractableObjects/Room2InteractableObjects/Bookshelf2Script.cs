@@ -21,7 +21,8 @@ public class Bookshelf2Script : InputInteractableScript
     {
         if (bookshelf2Active)
         {
-            gM.currrentTablePanel = book2Panel;
+            gM.currentTablePanel = book2Panel;
+            gM.panelY = 50f;
             book2Panel.SetActive(true);
             gDM.ShowDialogue(new string[] { "Lucas looks around the second bookshelf to find a book with the title 'Final Destination'.",
             "He finds the book.", "Lucas: So, this is 'The Evil Lab.'", "In this book is a number substitution chart. ", "Lucas: " +

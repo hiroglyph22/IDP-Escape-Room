@@ -94,7 +94,8 @@ public class BoxScript : InputInteractableScript
                     "Lucas: I’ll just save the other paper for later. (Adds paper to inventory)", "Lucas: Hmm. " +
                     "Something that relates to time..." }, box);
 
-                gM.currrentTablePanel = morseCodeChartPanel;
+                gM.currentTablePanel = morseCodeChartPanel;
+                gM.panelY = 6f;
                 access = false;
                 timesInteracted = 4;
                 clock.GetComponent<SpriteRenderer>().sprite = clock_paper;

@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f3bad1f92a90d4b8e9a28eb4a6e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 280448295}
+  timer: {fileID: 0}
   dialogLines:
   - 'Lucas: Great. Not only do I have to capture Dr. Nefarious, but I also have to
     get out of his ridiculous labyrinth unless I want to become another experiment!'
@@ -472,6 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f3bad1f92a90d4b8e9a28eb4a6e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  timer: {fileID: 0}
   dialogLines:
   - 'Lucas: Great. Not only do I have to capture Dr. Nefarious, but I also have to
     get out of his ridiculous labyrinth unless I want to become another experiment!'
@@ -506,7 +510,7 @@ MonoBehaviour:
   dText: {fileID: 147660353}
   dialogActive: 1
   currentLine: 0
-  gDH: {fileID: 280448297}
+  gSD: {fileID: 280448297}
   playerInteract: {fileID: 613060180}
   nextScene: {fileID: 471575681}
   currentObject: {fileID: 280448295}
@@ -1111,11 +1115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1140, y: 540}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

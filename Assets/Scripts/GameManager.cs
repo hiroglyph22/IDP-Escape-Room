@@ -12,9 +12,10 @@ public class GameManager : InputInteractableScript
     private bool firstTimeHint = true;
     private bool firstTimeAnswer = true;
     private int currentHint;
-    private int currentAnswer;
+    private int currentAnswer = 0;
+    public float panelY;
 
-    public GameObject currrentTablePanel = null;
+    public GameObject currentTablePanel = null;
     public GameObject gMObject;
     static public int[] timeTaken = new int[] {0,0,0};
     static public int[] hintsTaken = new int[] {0,0,0};
@@ -22,7 +23,8 @@ public class GameManager : InputInteractableScript
 
     public int hintNum = 0;
 
-    string[] hints = {"Dr. Nefarious: Your first hint is that the answer for the combination lock located on the small box rhymes with “blue” " +
+    string[] hints = {
+        "Dr. Nefarious: Your first hint is that the answer for the combination lock located on the small box rhymes with “blue” " +
             "and it’s something you’ve been looking for. I hope you use this hint wisely, detective, but I'm going to have to deduct " +
             "2 minutes from your overall time.",
 
@@ -32,6 +34,7 @@ public class GameManager : InputInteractableScript
         "Dr. Nefarious: This hint will help give you a clue of what the answer for the morse code could be. Your hint is that the answer to the " +
             "morse code is the same as your goal for this escape room. You are trying to _____ the room. This is a very helpful hint, " +
             "so it will cost you 2 minutes of your time.",
+
         "Dr. Nefarious: This puzzle was simple but I will still provide you with a hint at the " +
             "cost of 2 minutes from your overall time. The word the braille spells out is a synonym for the word cipher. Good luck and" +
             " remember the time is counting. Tik Tok Tik Tok…", 
@@ -59,23 +62,18 @@ public class GameManager : InputInteractableScript
         "Dr. Nefarious: Having a bit of trouble detective? I can give you a hint but it will cost you. Don’t worry, it's only about two minutes! Your hint is " +
             "‘Diamonds form under this’ Have fun detective!!"};
 
-    string[] answers = { "Dr. Nefarious: The code for the small box is “CLUE”. 1 minute will be deducted from your time", 
-        "Dr. Nefarious: The answer for the " +
-            "letters to numbers in the small box is " +
-            "“Only Time Will Tell”. 1 min will be deducted from your time.", 
+    string[] answers = { 
+        "Dr. Nefarious: The code for the small box is “CLUE”. 1 minute will be deducted from your time", 
+
+        "Dr. Nefarious: The answer for the letters to numbers in the small box is “Only Time Will Tell”. 1 min will be deducted from your time.", 
         
-        "Dr. Nefarious: The morse code behind the clock you were led to says " +
-            "“Escape.” From there, you will input the code " +
-            "into the chest and use that key to open the door. 1 min will be deducted from your time.", 
+        "Dr. Nefarious: The morse code behind the clock you were led to says “Escape.” From there, you will input the code into the chest and use that key to open the door. 1 min will be deducted from your time.", 
         
-        "Dr. Nefarious: The answer " +
-            "for this first puzzle is “CODE”. Sadly, 1 minute will be deducted from your time.", 
+        "Dr. Nefarious: The answer for this first puzzle is “CODE”. Sadly, 1 minute will be deducted from your time.", 
         
-        "Dr. Nefarious: The answer for this " +
-            "second puzzle is “PERIODIC TABLE”. This will take off 1 minute from your time.", 
+        "Dr. Nefarious: The answer for this second puzzle is “PERIODIC TABLE”. This will take off 1 minute from your time.", 
         
-        "Dr. Nefarious: The answer for this third " +
-            "puzzle is 581301134181981301981413. This will take off 1 minute from your time.",
+        "Dr. Nefarious: The answer for this third puzzle is 581301134181981301981413. This will take off 1 minute from your time.",
 
         "Dr. Nefarious: The answer for this first riddle is 'DIAMOND'. This will take off 1 minute from your time.",
 
@@ -97,7 +95,7 @@ public class GameManager : InputInteractableScript
         {
             if (currentHint != hintNum)
             {
-                firstTimeAnswer = true;
+                firstTimeHint = true;
             }
             gDM.ShowDialogue(new string[] { hints[hintNum] }, gMObject);
             if (firstTimeHint)
@@ -111,19 +109,20 @@ public class GameManager : InputInteractableScript
             {
                 inputField.SetActive(true);
                 input.placeholder.GetComponent<Text>().text = "Do you want to look at the answer?";
-                //Debug.Log(input.text + " is the input text");
             }
-            //hintNum++;
         }
         else if (Input.GetButtonDown("pull up table") && playerInteract.currentlyInteracting == false)
         {
-            if (currrentTablePanel.activeSelf)
+            if (currentTablePanel.activeSelf)
             {
-                currrentTablePanel.SetActive(false);
+                currentTablePanel.SetActive(false);
             }
             else
             {
-                currrentTablePanel.SetActive(true);
+                currentTablePanel.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(2200, 2000); 
+                Vector3 pos = currentTablePanel.transform.GetChild(1).GetComponent<RectTransform>().localPosition;
+                currentTablePanel.transform.GetChild(1).GetComponent<RectTransform>().localPosition = new Vector3(pos.x, panelY, pos.x);
+                currentTablePanel.SetActive(true);
             }
         }
     }
