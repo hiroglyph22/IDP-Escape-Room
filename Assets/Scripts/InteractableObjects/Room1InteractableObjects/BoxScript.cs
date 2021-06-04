@@ -68,7 +68,7 @@ public class BoxScript : InputInteractableScript
                 gM.hintNum = 1;
                 letterNumberPanel.SetActive(true);
 
-                gDM.InteractionAfterInput(new string[] { "Lucas: Sweet it openned up. Looks like the answer was CLUE.", "Lucas: Wait... there's " +
+                gDM.InteractionAfterInput(new string[] { "Lucas: Sweet it opened up. Looks like the answer was CLUE.", "Lucas: Wait... there's " +
                 "more paper?", "Inside this box is a piece of paper with a letters to numbers table and a cipher. It " +
                 "also contains another piece of paper, which contains a table with what seems to be instructions to " +
                 "decode morse code.", "On the first paper, the cipher reads out: O,14,12,25 T,9,13,E 23,I,12,12 20,5,12,12.",

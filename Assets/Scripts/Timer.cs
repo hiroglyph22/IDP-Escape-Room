@@ -4,41 +4,54 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : DefaultInteractableScript
+public class Timer : MonoBehaviour
 {
 
     public static float time = 1800f;
     public Text text;
     static public bool lose = false;
-    static public GameObject timer;
+    public GameObject timer;
     public GameObject blackPanel;
+    public GameDialogManager gDM;
+    static public bool timerOn = false;
 
-    protected override void Start()
+    public void Start()
     {
-        base.Start();
+        gDM = FindObjectOfType<GameDialogManager>();
+        Debug.Log(gDM);
     }
 
     void Update()
     {
-        if (time > 0)
+        if (timerOn)
         {
-            time -= Time.deltaTime;
-        }
-        else
-        {
-            lose = true;
-            //Show lose screen
-            gDM.ShowDialogue(new string[] {"BEEEEP. BEEEP. BEEEEP."}, timer);
-            
-        }
+            if (time > 0)
+            {
+                time -= Time.deltaTime;
+            }
+            else
+            {
+                if (lose == false)
+                {
+                    lose = true;
 
-        DisplayTime(time);
+                    //Show lose screen
+                    //Debug.Log(gDM);
+                    gDM.ShowDialogue(new string[] { "BEEEEP. BEEEP. BEEEEP." }, timer);
+                    Debug.Log("Hi");
+                }
 
+            }
+
+            DisplayTime(time);
+        }
     }
 
     public void DoneWithDialogue()
     {
         blackPanel.SetActive(true);
+        BlackPanelTransition.transitionCount = 3;
+        Debug.Log("Dialogue done");
     }
 
     void DisplayTime(float displayingTime)

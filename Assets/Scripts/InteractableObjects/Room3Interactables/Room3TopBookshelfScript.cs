@@ -8,7 +8,7 @@ public class Room3TopBookshelfScript : DefaultInteractableScript
 
     public void DoInteraction()
     {
-        gDM.ShowDialogue(new string[] { "Lucas: Lucas: Will there be clues in this bookshelf?", "Lucas searches through the bookshelf " +
+        gDM.ShowDialogue(new string[] { "Lucas: Will there be clues in this bookshelf?", "Lucas searches through the bookshelf " +
             "for anything suspicious.", "Lucas: Yeah I can't find anything." }, bookshelf);
     }
 

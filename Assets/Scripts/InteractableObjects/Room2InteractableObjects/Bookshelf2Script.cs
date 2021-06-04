@@ -34,7 +34,7 @@ public class Bookshelf2Script : InputInteractableScript
         }
         else if (bookshelf1.bookshelf1Active)
         {
-            gDM.ShowDialogue(new string[] { "Lucas looks around the second bookshelf to find a book with about the periodic table.",
+            gDM.ShowDialogue(new string[] { "Lucas looks around the second bookshelf to find a book with the periodic table.",
             "He does not find anything."}, bookshelf2);
         }
     }

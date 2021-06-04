@@ -22,7 +22,7 @@ public class Room1DoorScript : DefaultInteractableScript
         }
         else
         {
-            gDM.ShowDialogue(new string[] { "Lucas: Man! Of course it’s locked. ", "To open the door, you must need a key to unlock.",
+            gDM.ShowDialogue(new string[] { "Lucas: Man! Of course it’s locked. ", "To open the door, you need a key to unlock.",
                 "Lucas: So, I need a key then..." }, door);
         }
     }

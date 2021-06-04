@@ -23,8 +23,7 @@ public static class DataDump
         credential = GoogleCredential.FromJson(credentialString).CreateScoped(Scopes);
         service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer() {
             HttpClientInitializer = credential,
-            ApplicationName = ApplicationName
-        });
+            ApplicationName = ApplicationName});
     }
 
     public static IList<IList<object>> ReadEntries(string rangeLow, string rangeHigh, int index){
@@ -38,10 +37,10 @@ public static class DataDump
     public static void CreateEntry(string leftColumn, string rightColumn, List<object> inputs, int index) {
         var sheet = sheets[index];
         var range = $"{sheet}!{leftColumn}:{rightColumn}";
-        var valueRange = new Google.Apis.Sheets.v4.Data.ValueRange();
-        valueRange.Values = new List<IList<object>> {inputs} ;
+        var valueRange = new ValueRange();
+        valueRange.Values = new List<IList<object>> {inputs};
         var appendRequest = service.Spreadsheets.Values.Append(valueRange, SpreadsheetID, range);
-        appendRequest.ValueInputOption = Google.Apis.Sheets.v4.SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+        appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
         var appendResponse = appendRequest.Execute();
     }
 

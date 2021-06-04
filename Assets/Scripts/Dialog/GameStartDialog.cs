@@ -30,7 +30,7 @@ public class GameStartDialog : MonoBehaviour
             "Hints will automatically take away 2 minutes of your time, and you can only use 1 per puzzle. Keep in mind that there are 3-4 puzzles in each room.",
             "If you can't find the answer after the first hint, you can go back to the hint and type 'yes' to the prompt asking if you want the answer. Answers will take 1 minute off of your time.",
             "The last thing is, you can open up the current decoding paper and take a look at the table or chart by pressing 'i' whenever you aren't already interacting with another object.",
-            "Last thing. You might want to use a pencil and a paper to when decoding ciphers.",
+            "Last thing. You might want to use a pencil and a paper when decoding ciphers.",
             "Thank you for playing!"}, dialogueManager);
             firstTime = false;
         }
@@ -39,6 +39,7 @@ public class GameStartDialog : MonoBehaviour
     public void DoneWithDialogue()
     {
         playerInteract.currentlyInteracting = false;
-        timer.SetActive(true);
+        delayTime = Time.time;
+        Timer.timerOn = true;
     }
 }

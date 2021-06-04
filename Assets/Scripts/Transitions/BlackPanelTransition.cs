@@ -11,7 +11,7 @@ public class BlackPanelTransition : MonoBehaviour
     public GameObject player;
     public GameObject dialogueManager;
 
-    private int transitionCount = 1;
+    static public int transitionCount = 1;
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class BlackPanelTransition : MonoBehaviour
         }
         else if (transitionCount == 4)
         {
-            SceneManager.LoadScene("EndScene");
+            SceneManager.LoadScene("EndScreen");
         }
         
     }

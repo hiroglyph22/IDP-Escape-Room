@@ -23,7 +23,7 @@ public class ChestScript : InputInteractableScript
             lockPanel.SetActive(true);
             gDM.ShowDialogue(new string[] { "Lucas: I hear something rattling inside. It sounds like a key! ",
             "It seems that the chest has been closed off by a combination lock with the alphabet." +
-            "Continue to look around the room and gather clues to unlock this chest." }, chest);
+            " Continue to look around the room and gather clues to unlock this chest." }, chest);
         }
         else if (timesInteracted == 2)
         {

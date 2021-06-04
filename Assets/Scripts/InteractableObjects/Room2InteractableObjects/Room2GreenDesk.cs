@@ -8,7 +8,7 @@ public class Room2GreenDesk : DefaultInteractableScript
 
     public void DoInteraction()
     {
-        gDM.ShowDialogue(new string[] { "Lucas: There could be something on this desk.", "Lucas at the objects on the desk.",
+        gDM.ShowDialogue(new string[] { "Lucas: There could be something on this desk.", "Lucas looks at the objects on the desk.",
             "Lucas: There's a small blood stain. I think Dr. Nefarious attempted to wipe it, with what looks like a wet wipe. " +
             "Yikes. It's disgusting how many germs there could be in that stain. I hope I don't have to touch it later."}, desk);
     }
